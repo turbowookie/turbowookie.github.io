@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Turbo Wookie. Manual.</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic,600italic|Source+Code+Pro:300|Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="hero-img">&nbsp;</div>
+
+<article class="wrap">
+  <header>
+    <h1>Turbo Wookie</h1>
+  </header>
+
+  <section>
+    <nav>
+      <ul>
+        <li><a href="index.html">info</a></li>
+        <li><a href="https://github.com/turbowookie/turbo-wookie">github</a></li>
+        <li><a href="manual.html">manual</a></li>
+      </ul>
+    </nav>
+
+    <h1>Manual.</h1>
+    <p>
+      To be used in the unfortunate case where you have to use this without one 
+      of the four developers.
+    </p>
+    <p>
+      If, for whatever totally unforeseeable future you happen to be in, the four 
+      initial developers are ... otherwise indisposed ... and you have to run 
+      Turbo Wookie without them, this might be of use to you.
+    </p>
+    <p>
+      That said, we take no responsibility if you can't, and especially if you 
+      can, get Turbo Wookie to run.
+    </p>
+
+    <h2>Prerequisites</h2>
+    <p>
+      To run Turbo Wookie at present you need the following:
+      <ul>
+        <li>The Go compiler for your operating system (Turbo Wookie does not yet exist in binary form).</li>
+        <li>MPD. Working. With its bin directory in your path. As in, you should be able to type `mpd` and it should either work or give you an error talking about missing config files.</li>
+        <li>A web browser. If you want to do frontend development, you'll need Dartium (a Chromium fork for running dart code).</li>
+        <li>A plain text editor (you have to do some minor document editing).</li>
+      </ul>
+    </p>
+
+    <h2>Setup</h2>
+    <p><em>Can you run `mpd` and have stuff happen? What about `go`? If not, read the prerequisites again, and ask the Internet for help. The Internet is known for <strike>a wanton cruelty</strike> being helpful.</em></p>
+
+    <h3>config.yaml</h3>
+    <ol>
+      <li>Open the `backend/mpd` directory.</li>
+      <li>Copy `mpd.conf.example` to `mpd.conf`</li>
+      <li>Edit `mpd.conf` so that all values BEFORE line 57 start with your mpd directory, and end with the same filename/directory name as before (for example, `db_file` should still end with `database.db`)</li>
+    </ol>
+
+    <h3>dart2js</h3>
+    <p><em>This is only necessary if you've downloaded through git, and don't have the compiled JavaScript. If you don't have compiled JavaScript, you're going to need dart.</em></p>
+    <ol>
+      <li>If you don't have dart installed, install dart. And make sure it's in your path.</li>
+      <li>Open the `frontend/turbo_wookie` directory.</li>
+      <li>Run `pub get`</li>
+      <li>Run `pub update`</li>
+      <li>Run `pub build`
+        <ol><li>If you get warnings here, ignore them. They're just warnings, and we don't know their cause.</li></ol>
+      </li>
+    </ol>
+
+    <h2>Running Turbo Wookie (like, for realsies, yo.)</h2>
+    <p><em>If this doesn't work, you probably screwed up the setup or prerequisites portion (to be fair, screwing up the setup is included in the prerequisites portion). There are no excuses.</em></p>
+
+    <ol>
+      <li>Open the `backend` directory.</li>
+      <li>Run the command `go run server.go`
+        <ol>
+          <li>If you get errors saying you don't have the required libraries, run the following commands. You will need git installed, and in your path.
+            <ol>
+              <li>go get github.com/gorilla/mux</li>
+              <li>go get github.com/dkuntz2/gompd/mpd</li>
+              <li>go get github.com/kylelemons/go-gypsy/yaml</li>
+            </ol>
+          </li>If you got errors running those command, make sure you have git installed and in your path. After you've made sure you have git installed, double check that you have git installed. If, after that double check, you still have errors, make sure Go is setup correctly. And try again.</li>
+        </ol>
+      </li>
+      <li>Open your browser, and navigate to http://localhost:9000, or if that's not to your liking, http://127.0.0.1:9000. If that's still not to your liking, ask your computer for your IP address, and navigate to that, plus :9000, because the server's running on port 9000.</li>
+    </ol>
+
+  </section>
+
+  <footer>
+    <hr>
+    <p>Copyright &copy; 2013 <a href="https://github.com/turbowookie">The Turbo Wookie Developers</a><br>
+  </footer>
+</article>
+
+
+
+
+</body>
+</html>
