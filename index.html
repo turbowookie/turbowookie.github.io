@@ -2,8 +2,6 @@
 <html>
 <head>
   <title>Turbo Wookie</title>
-
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,300italic,600italic|Source+Code+Pro:300|Bitter:400,700,400italic' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="style.css" />
 
   <script src="assets/jquery-2.0.3.min.js"></script>
@@ -32,35 +30,46 @@
 
     <iframe width="853" height="480" src="//www.youtube.com/embed/IRGZOVppDFw" frameborder="0" allowfullscreen></iframe>
 
-    <h2>Problem</h2>
+    <hr>
+
     <p>
-      Today, there are several ways to listen to music online, through services 
-      such as Spotify, Google Music, Pandora, and the like. However, while all of 
-      them are streaming services, none of them let you stream with other people 
-      concurrently.
-    </p>
-
-
-    <h2>Solution</h2>
-    <p>
-      Turbo Wookie is a collaborative music jukebox. Turbo Wookie lets a group of 
-      individuals (we'll call them friends) collaboratively create a playlist and 
-      listen to it at the same time.
-    </p>
-
-
-    <h2>Why</h2>
-    <p>
-      There are many times when a group of people might want to listen to the 
-      same music (or any kind of audio content) at the same time. 
+      Turbo Wookie is a whimsically named product. More importantly, it's a collaborative music jukebox which streams music to multiple clients concurrently.
     </p>
 
     <p>
-      One such instance is, with the current remote working hype, an office 
-      could start an instance of Turbo Wookie and let remote workers connect, 
-      helping foster a sense of community.
+      If that doesn't really explain anything, in less technical terms, Turbo Wookie is a collaborative jukebox; a group of people (probably friends?) can start up a Turbo Wookie instance, share the address amongst themselves, and build a playlist that they'll be able to listen to at the same time.
     </p>
 
+    <p>
+      Think of it like an internet radio station, but the only music played is yours, and the DJ is everyone you let access your Turbo Wookie instance.
+    </p>
+
+
+    <h2>Background</h2>
+    <p>
+      Turbo Wookie started as a group final project for a Software Design and Development course. We liked it more than the other ideas proposed to the group.
+    </p>
+
+
+    <h2>How does it work?</h2>
+    <p>Turbo Wookie has four main components, in three parts:</p>
+    <ol>
+      <li>A Music Stream. That's manipulable.</li>
+      <li>A Music Library.</li>
+      <li>A Web Server that serves clients and manipulates the stream.</li>
+      <li>A Web-based Frontend. Because who wants to download another application?</li>
+    </ol>
+
+    <p>The three parts are:</p>
+    <ol>
+      <li><a href="http://www.musicpd.org">MPD</a> (Music Player Daemon). It acts as both our stream and library.</li>
+      <li>Our <a href="https://github.com/turbowookie/turbo-wookie/tree/master/backend">backend server</a>, written in <a href="http://golang.org">Go</a>.</li>
+      <li>Our <a href="https://github.com/turbowookie/turbo-wookie/tree/master/frontend/turbo_wookie">frontend</a>, written in <a href="http://dartlang.org">Dart</a>.</li>
+    </ol>
+
+    <p>
+      Thus far, running Turbo Wookie been tested on Linux (Ubuntu and Arch) and Windows. Presumably it'll run on OS X, we just don't have any team members running OS X.
+    </p>
   </section>
 
   <footer>

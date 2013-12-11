@@ -1,31 +1,32 @@
+@import "http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic,700italic|Source+Code+Pro:300|Bitter:400,700,400italic";
 body {
   padding: 0;
   margin: 0;
   font-family: "Source Sans Pro", "Droid Sans", Helvetica, Arial, sans-serif;
   background: url(assets/gray_jean.png);
-  font-weight: 300;
   font-size: 18px; }
 
 p {
   font-family: "Source Sans Pro", "Droid Sans", Helvetica, Arial, sans-serif;
-  font-size: 18px;
   line-height: 1.5em;
   padding: 0 0 1em;
   margin: 0; }
-  p strong {
-    font-weight: 600; }
+
+ul, ol {
+  line-height: 1.5em;
+  margin: 0;
+  padding: 0 0 1em 2em; }
 
 h1, h2, h3, h4 {
-  font-family: Bitter, "Source Sans Pro", "Droid Sans", Helvetica, Arial, sans-serif; }
-
-h1 {
-  text-align: center; }
+  font-family: Bitter, "Source Sans Pro", "Droid Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  padding: 0;
+  margin: .5em 0; }
 
 h1 {
   font-size: 2.5em; }
 
 h2 {
-  font-weight: 400;
   font-size: 1.3em; }
 
 hr {
@@ -38,7 +39,7 @@ hr {
     padding: 0; }
 
 a {
-  color: #52b1e0;
+  color: #1f7ead;
   text-decoration: none; }
   a:hover {
     text-decoration: underline; }
@@ -60,12 +61,15 @@ footer p {
   text-align: center;
   font-size: .95em; }
 footer a {
-  color: #7dc4e8; }
+  color: #269dd9; }
 
 code {
   font-family: "Source Code Pro", Cousine, "Droid Sans Mono", monospace;
-  font-size: 16px;
-  font-weight: 300; }
+  font-size: 15px;
+  font-weight: 300;
+  border: 1px solid #cccccc;
+  padding: 0 4px;
+  border-radius: 3px; }
 
 pre {
   padding-bottom: 1em;
@@ -83,7 +87,7 @@ h2.info {
   min-width: 400px;
   background: white;
   padding: 50px;
-  margin: -30em auto 50px;
+  margin: -35em auto 50px;
   box-shadow: 0px 0px 5px gray; }
 
 .hero-img {
@@ -111,7 +115,6 @@ nav {
   nav li {
     display: inline-block;
     padding: 0 .5em;
-    font-style: italic;
     border-right: 1px solid #cccccc; }
     nav li:last-child {
       border-right: none; }
