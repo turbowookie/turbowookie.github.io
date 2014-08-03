@@ -36,7 +36,15 @@
       That said, we take no responsibility if you can't, and especially if you can, get Turbo Wookie to run.
     </p>
 
-    <h2>Prerequisites</h2>
+    <nav>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#running">Running Turbo Wookie</a></li>
+      </ul>
+    </nav>
+
+    <h2 id="prerequisites">Prerequisites</h2>
     <p>
       To run Turbo Wookie at present you need the following:
       <ul>
@@ -50,8 +58,21 @@
       </ul>
     </p>
 
-    <h2>Setup</h2>
+    <h2 id="setup">Setup</h2>
     <p><em>Can you run <code>mpd</code> and have stuff happen? What about <code>go</code>? If not, read the prerequisites again, and ask the Internet for help. The Internet is known for <strike>a wanton cruelty</strike> being helpful.</em></p>
+
+    <h3>mpd on OS X</h3>
+    <p>
+      Getting MPD installed to a runnable state with Turbo Wookie on MPD requires some non-obvious work. While you can build it from the source manually, we highly suggest using <a href="http://brew.sh">homebrew</a> to install MPD. One might think that installing MPD using homebrew is as easy as <code>brew install mpd</code>, and one would be correct, but only if you don't like http streaming audio. The suggested flags are:
+    </p>
+
+    <p>
+      <code>brew install mpd --with-flac --with-lame --with-two-lame --with-vorbis</code>
+    </p>
+
+    <p>
+      You may also want to install <code>lame</code>, <code>twolame</code>, and <code>libvorbis</code>. Those are all encoders for streaming.
+    </p>
 
     <h3>config.yaml</h3>
     <ol>
@@ -72,7 +93,7 @@
       </li>
     </ol>
 
-    <h2>Running Turbo Wookie (like, for realsies, yo.)</h2>
+    <h2 id="running">Running Turbo Wookie (like, for realsies, yo.)</h2>
     <p><em>If this doesn't work, you probably screwed up the setup or prerequisites portion (to be fair, screwing up the setup is included in the prerequisites portion). There are no excuses.</em></p>
 
     <ol>
